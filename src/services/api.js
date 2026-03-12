@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Create axios instance with default config
 const API = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: "https://impact-reporting-backend.onrender.com/api",
   headers: {
     "Content-Type": "application/json",
   },
