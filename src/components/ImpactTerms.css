@@ -1,0 +1,164 @@
+/* --- Main Wrapper --- */
+.accordion-wrapper {
+  margin-bottom: 35px;
+  background-color: #f8fafc; /* Subtle slate background */
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.accordion-title {
+  font-size: 1.15rem;
+  color: #1e293b;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.accordion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* --- Accordion Cards --- */
+.accordion-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #cbd5e1; /* Default left border */
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+}
+
+.accordion-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+  border-color: #cbd5e1;
+}
+
+/* Active State */
+.accordion-card.is-open {
+  border-color: #e2e8f0;
+  border-left: 4px solid #10b981; /* Emerald Green highlight */
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.08);
+}
+
+/* --- Trigger Button --- */
+.accordion-trigger {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 16px 20px;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.2s ease;
+}
+
+.accordion-trigger:focus {
+  outline: none;
+  background-color: #f0fdf4; /* Very light green on focus */
+}
+
+.accordion-trigger-text {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #334155;
+  transition: color 0.2s ease;
+}
+
+.accordion-card.is-open .accordion-trigger-text {
+  color: #059669; /* Darker emerald for active text */
+}
+
+/* Premium Icon Badge */
+.accordion-trigger-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background-color: #f1f5f9;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #64748b;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordion-card.is-open .accordion-trigger-icon {
+  background-color: #d1fae5; /* Emerald badge background */
+  color: #10b981; /* Emerald badge icon */
+  transform: rotate(180deg); /* Smooth spin effect */
+}
+
+/* --- Body & Content Animation --- */
+.accordion-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordion-card.is-open .accordion-body {
+  grid-template-rows: 1fr;
+}
+
+.accordion-body-inner {
+  overflow: hidden;
+}
+
+/* --- Text & Typography Inside --- */
+.accordion-body-inner p {
+  margin: 0;
+  padding: 0 20px 16px 20px;
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.accordion-body-inner ul {
+  margin: 0 0 20px 0;
+  padding: 0 20px 0 40px; 
+}
+
+.accordion-body-inner li {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.accordion-body-inner li:last-child {
+  margin-bottom: 0;
+}
+
+.accordion-body-inner li strong {
+  color: #1e293b;
+  font-weight: 700;
+}
+
+.accordion-body-inner li em {
+  color: #0ea5e9; /* Sky blue for examples */
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* --- Beautiful Code Snippets --- */
+.term-code {
+  background-color: #f1f5f9;
+  color: #ec4899; /* Pink pop for numbers/code */
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9em;
+  font-weight: 600;
+  border: 1px solid #e2e8f0;
+}
